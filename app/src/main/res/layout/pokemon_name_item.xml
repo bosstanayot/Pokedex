@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="pokemon"
+            type="tanayot.sujipinyo.mypokedex.model.PokemonUrl" />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_card_view"
+        app:cardElevation="@dimen/margin_card_view"
+        app:cardBackgroundColor="@color/colorPrimaryDark">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{pokemon.pokemonName}"
+            android:textSize="@dimen/text_large"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:layout_margin="@dimen/margin_textview_in_cardview"
+            />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+</layout>

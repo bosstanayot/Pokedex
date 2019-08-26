@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyPokedex</string>
+    <string name="height_pokemon">Height: %d Centimeter</string>
+    <string name="weight_pokemon">Weight: %.2f Kilogram</string>
+    <string name="exp_pokemon">Base Exp: %d</string>
+    <string name="label_pokedex">Pokedex</string>
+    <string name="lable_pokemon_detail">Pokemon Detail</string>
+</resources>

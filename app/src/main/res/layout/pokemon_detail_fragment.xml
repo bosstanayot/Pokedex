@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewmodel"
+            type="tanayot.sujipinyo.mypokedex.ui.main.PokemonDetailViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.PokemonDetailFragment"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin_pokemon_name">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/image_size">
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+            <tanayot.sujipinyo.mypokedex.ImageRatioView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                app:imageOrientation="portrait"
+                app:imageRatio="square"
+                bind:pokeImage="@{viewmodel.pokemonDetail.imagePokemonUrl}"
+                bind:progressBar="@{progressBar}" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:pokeName="@{viewmodel.pokemonDetail.pokemonName}"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="@dimen/text_large"
+            android:layout_margin="@dimen/margin_pokemon_name"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/height_pokemon, viewmodel.pokemonDetail.heightInCentimeter)}"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="@dimen/text_medium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/weight_pokemon, viewmodel.pokemonDetail.weightInKilogram)}"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="@dimen/text_medium"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/exp_pokemon, viewmodel.pokemonDetail.pokemonExp)}"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="@dimen/text_medium"/>
+
+
+        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBarDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorPrimary"
+            android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

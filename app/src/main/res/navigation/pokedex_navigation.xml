@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokedex_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="tanayot.sujipinyo.mypokedex.ui.main.PokemonListFragment"
+        android:label="@string/label_pokedex"
+        tools:layout="@layout/pokemon_list_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonDetailFragment"
+        android:name="tanayot.sujipinyo.mypokedex.ui.main.PokemonDetailFragment"
+        android:label="@string/lable_pokemon_detail"
+        tools:layout="@layout/pokemon_detail_fragment">
+        <argument android:name="pokemonUrl" app:argType="string"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_large">26sp</dimen>
+    <dimen name="margin_card_view">20dp</dimen>
+    <dimen name="margin_textview_in_cardview">20dp</dimen>
+    <dimen name="margin_pokemon_name">30dp</dimen>
+    <dimen name="image_size">200dp</dimen>
+</resources>
