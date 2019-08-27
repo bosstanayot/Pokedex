@@ -3,16 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="android.view.View" />
+
         <variable
             name="adapter"
             type="tanayot.sujipinyo.mypokedex.adapter.PokemonListAdapter" />
+
+        <variable
+            name="viewmodel"
+            type="tanayot.sujipinyo.mypokedex.ui.list.PokemonListViewModel" />
     </data>
     
 <RelativeLayout
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.PokemonListFragment">
+    tools:context=".ui.list.PokemonListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/message"
@@ -26,6 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:indeterminateTint="@color/colorPrimary"/>
+        android:indeterminateTint="@color/colorPrimary" />
 </RelativeLayout>
 </layout>

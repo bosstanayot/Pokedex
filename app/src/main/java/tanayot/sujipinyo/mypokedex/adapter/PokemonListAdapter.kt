@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import tanayot.sujipinyo.mypokedex.R
 import tanayot.sujipinyo.mypokedex.databinding.PokemonNameItemBinding
 import tanayot.sujipinyo.mypokedex.model.PokemonUrl
-import tanayot.sujipinyo.mypokedex.ui.main.PokemonListListener
+import tanayot.sujipinyo.mypokedex.ui.list.PokemonListListener
 
 class PokemonListAdapter(private val listener: PokemonListListener):
     PagedListAdapter<PokemonUrl, PokemonListAdapter.ViewHolder>(PokemonUrl.CALLBACK) {

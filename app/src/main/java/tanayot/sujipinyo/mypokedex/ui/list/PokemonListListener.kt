@@ -1,4 +1,4 @@
-package tanayot.sujipinyo.mypokedex.ui.main
+package tanayot.sujipinyo.mypokedex.ui.list
 
 import tanayot.sujipinyo.mypokedex.model.PokemonUrl
 

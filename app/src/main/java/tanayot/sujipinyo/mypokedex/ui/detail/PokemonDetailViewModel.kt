@@ -1,15 +1,18 @@
-package tanayot.sujipinyo.mypokedex.ui.main
+package tanayot.sujipinyo.mypokedex.ui.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.github.kittinunf.fuel.Fuel
+import com.github.kittinunf.fuel.core.FuelError
 import tanayot.sujipinyo.mypokedex.model.Pokemon
-import tanayot.sujipinyo.mypokedex.service.PokemonDetailRepository
+import tanayot.sujipinyo.mypokedex.repository.PokemonDetailRepository
 
-class PokemonDetailViewModel(private val pokemonDetailRepository: PokemonDetailRepository) : ViewModel(), PokemonDetailListener {
+class PokemonDetailViewModel(private val pokemonDetailRepository: PokemonDetailRepository) : ViewModel(),
+    PokemonDetailListener {
 
     val pokemonDetail: MutableLiveData<Pokemon>  = MutableLiveData()
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
+    val networkError: MutableLiveData<FuelError> = MutableLiveData()
+
     fun assignArgument(args: PokemonDetailFragmentArgs) {
        getPokemonDetail(args.pokemonUrl)
     }
@@ -24,7 +27,8 @@ class PokemonDetailViewModel(private val pokemonDetailRepository: PokemonDetailR
         pokemonDetail.value =  response.value
     }
 
-    override fun onGetPokemonDetailFailure() {
+    override fun onGetPokemonDetailFailure(error: FuelError) {
+        networkError.value = error
     }
 
 }

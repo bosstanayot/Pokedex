@@ -1,9 +1,9 @@
-package tanayot.sujipinyo.mypokedex.service
+package tanayot.sujipinyo.mypokedex.repository
 
 import androidx.lifecycle.MutableLiveData
 import com.github.kittinunf.fuel.Fuel
 import tanayot.sujipinyo.mypokedex.model.Pokemon
-import tanayot.sujipinyo.mypokedex.ui.main.PokemonDetailListener
+import tanayot.sujipinyo.mypokedex.ui.detail.PokemonDetailListener
 
 class PokemonDetailRepository(private val fuel: Fuel) {
     fun  getPokemonDetail(url: String, listener: PokemonDetailListener){
@@ -11,10 +11,10 @@ class PokemonDetailRepository(private val fuel: Fuel) {
         fuel.get(url)
             .responseObject(Pokemon.Deserializer()) { _, _, result ->
                 result.fold(success = { body ->
-                   response.value =  body
+                    response.postValue(body)
                     listener.onGetPokemonDetailSuccess(response)
                 }, failure = { error ->
-                    listener.onGetPokemonDetailFailure()
+                    listener.onGetPokemonDetailFailure(error)
                 })
             }
     }

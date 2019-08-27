@@ -1,12 +1,9 @@
 package tanayot.sujipinyo.mypokedex.model
 
-import androidx.databinding.BindingAdapter
-import com.bumptech.glide.Glide
 import com.github.kittinunf.fuel.core.ResponseDeserializable
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 import tanayot.sujipinyo.mypokedex.ApiConstant.BASE_IMAGE_URL
-import tanayot.sujipinyo.mypokedex.ImageRatioView
 
 data class Pokemon(@SerializedName("id")val pokemonId: Int,
                    @SerializedName("name")val pokemonName: String,

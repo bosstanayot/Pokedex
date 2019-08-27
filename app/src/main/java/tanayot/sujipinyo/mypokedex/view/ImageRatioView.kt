@@ -1,9 +1,10 @@
-package tanayot.sujipinyo.mypokedex
+package tanayot.sujipinyo.mypokedex.view
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.annotation.Nullable
 import androidx.appcompat.widget.AppCompatImageView
+import tanayot.sujipinyo.mypokedex.R
 
 class ImageRatioView : AppCompatImageView {
 
@@ -22,7 +23,9 @@ class ImageRatioView : AppCompatImageView {
 
     constructor(context: Context, @Nullable attrs: AttributeSet, defStyleAttr: Int)
             : super(context, attrs, defStyleAttr) {
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ImageRatioView)
+        val typedArray = context.obtainStyledAttributes(attrs,
+            R.styleable.ImageRatioView
+        )
         imageOrientation = typedArray.getInt(R.styleable.ImageRatioView_imageOrientation, 0)
         imageRatio = typedArray.getInt(R.styleable.ImageRatioView_imageRatio, 0)
 

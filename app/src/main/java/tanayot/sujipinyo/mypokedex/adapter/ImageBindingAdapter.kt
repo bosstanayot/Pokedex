@@ -10,7 +10,7 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import tanayot.sujipinyo.mypokedex.ImageRatioView
+import tanayot.sujipinyo.mypokedex.view.ImageRatioView
 
 object ImageBindingAdapter{
     @JvmStatic
