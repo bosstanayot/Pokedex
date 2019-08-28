@@ -11,7 +11,7 @@ class PokemonDetailRepository(private val fuel: Fuel) {
         fuel.get(url)
             .responseObject(Pokemon.Deserializer()) { _, _, result ->
                 result.fold(success = { body ->
-                    response.postValue(body)
+                    response.value = body
                     listener.onGetPokemonDetailSuccess(response)
                 }, failure = { error ->
                     listener.onGetPokemonDetailFailure(error)
